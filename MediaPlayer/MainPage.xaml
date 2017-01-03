@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="MediaPlayer.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MediaPlayer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <CommandBar x:Name="bottomCommandBar">
+            <CommandBar.SecondaryCommands>
+                <AppBarButton x:Name="localVideoButton" Label="Video Local" Tapped="onTappedChangeVideoMethodButton"/>
+                <AppBarButton x:Name="urlVideoButton" Label="Video Streaming" Tapped="onTappedChangeVideoMethodButton"/>
+            </CommandBar.SecondaryCommands>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton x:Name="backButton" HorizontalAlignment="Stretch" Icon="Back" Label="Atrás" VerticalAlignment="Stretch" d:LayoutOverrides="Height" Tapped="backButton_Tapped"/>
+            <AppBarButton x:Name="stopButton" Icon="Stop" Label="Parar" Tapped="stopButton_Tapped"/>
+            <AppBarButton x:Name="playButton" HorizontalAlignment="Stretch" Icon="Play" Label="Reproducir" VerticalAlignment="Stretch" d:LayoutOverrides="Height" Tapped="playButton_Tapped"/>
+            <AppBarButton x:Name="forwardButton" HorizontalAlignment="Stretch" Icon="Forward" Label="Adelantar" VerticalAlignment="Stretch" d:LayoutOverrides="Height" Tapped="forwardButton_Tapped"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+        <MediaElement x:Name="mediaPlayer" Source="Video/caballeros.mp4">
+
+        </MediaElement>
+
+    </Grid>
+</Page>
