@@ -53,7 +53,7 @@ namespace MediaPlayer
         private void backButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
             TimeSpan timeSpan = new TimeSpan(0, 0, 0, -REWIND_MILISECONDS);
-            mediaPlayer.Position.Add(timeSpan);
+            mediaPlayer.Position = mediaPlayer.Position.Add(timeSpan);
         }
 
         private void onTappedChangeVideoMethodButton(object sender, TappedRoutedEventArgs e)
@@ -85,8 +85,7 @@ namespace MediaPlayer
             {
                 if (ex is FormatException)
                 {
-                    // handle exception. 
-                    // For example: Log error or notify user problem with file
+       
                 }
             }
         }
